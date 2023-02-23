@@ -43,9 +43,6 @@
 
 #define IS_3      Neptune3
 #define UI_VERSION "V1_1.0.5"  
-										
-							 
-
 /**
  * Here are some useful links to help get your machine configured and calibrated:
  *
@@ -61,15 +58,6 @@
  * Calibration Objects: https://www.thingiverse.com/thing:5573
  *                      https://www.thingiverse.com/thing:1278865
  */
-
-																			 
-																			 
-																			 
-  
-																			  
-																		   
-  
-																			 
 
 // @section info
 
@@ -103,23 +91,11 @@
 #define NO_NOZZLE_PREHEAT // uncomment if you don't want the nozzle to pre-heat for leveling. RECOMMENDED Enabled
 #define HAS_BLTOUCH               // uncomment if you have a BLTouch or clone
 #deine HAS_BIQUH2	//has a biqu H2 direct drive hot end
-																					
-																									 
-																																 
-																															
-																															 
-																							
 #if ENABLED(IS_DUAL_Z)
   #define Z2_ENABLE_PIN  E1_ENABLE_PIN
   #define Z2_STEP_PIN    E1_STEP_PIN
   #define Z2_DIR_PIN     E1_DIR_PIN
 #endif																														 
-
-					  
-									  
-									
-								   
-	  
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
@@ -156,10 +132,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-										 
 //#define SERIAL_PORT_2 -1
 //#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
-	  
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -183,15 +157,9 @@
 
 /**
  * Stepper Drivers
-												
-															 
  *
  * These settings allow Marlin to tune stepper driver timing and enable advanced options for
  * stepper drivers that support them. You may also override timing options in Configuration_adv.h.
-												 
-														
-															 
-													   
  *
  * Use TMC2208/TMC2208_STANDALONE for TMC2225 drivers and TMC2209/TMC2209_STANDALONE for TMC2226 drivers.
  *
@@ -241,7 +209,6 @@
  *   'W' : Secondary linear axis parallel to Z
  *
  * Regardless of these settings the axes are internally named I, J, K, U, V, W.
-								   
  */
 #ifdef I_DRIVER_TYPE
   #define AXIS4_NAME 'A' // :['A', 'B', 'C', 'U', 'V', 'W']
@@ -272,12 +239,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-				  
-					 
-					  
-	 
 #define EXTRUDERS 1
-	  
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -477,9 +439,6 @@
     #define AUTO_POWER_CONTROLLERFAN
     #define AUTO_POWER_CHAMBER_FAN
     #define AUTO_POWER_COOLER_FAN
-																									   
-																									  
-																									 
     #define POWER_TIMEOUT              30 // (s) Turn off power if the machine is idle for this duration
     //#define POWER_OFF_DELAY          60 // (s) Delay of poweroff after M81 command. Useful to let fans run for extra time.
   #endif
@@ -696,7 +655,6 @@
 //===========================================================================
 //============================= PID Settings ================================
 //===========================================================================
-															
 
 // @section hotend temp
 
@@ -722,7 +680,6 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-			 
     #define DEFAULT_Kp  23.22  //24.5
     #define DEFAULT_Ki  1.83 // 1.80
     #define DEFAULT_Kd  73.83// 79.42 
@@ -808,11 +765,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-							  
   #define DEFAULT_bedKp 10.00
   #define DEFAULT_bedKi .023
   #define DEFAULT_bedKd 305.4
-
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -863,7 +818,6 @@
 #endif // PIDTEMPCHAMBER
 
 #if ANY(PIDTEMP, PIDTEMPBED, PIDTEMPCHAMBER)
-																											
   //#define PID_OPENLOOP          // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
   #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
@@ -1214,22 +1168,14 @@
   //#define ENDSTOPPULLDOWN_ZMIN_PROBE
 #endif
 
-
-
-
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-						 
 #if ENABLED(HAS_BLTOUCH) 
   #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. *default = true Neptune 3 p.t.
 #else
   #define Z_MIN_ENDSTOP_INVERTING true 
 #endif
-	 
-									   
-	  
-
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1242,55 +1188,13 @@
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-						 
 #define U_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-	 
 #define V_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #if ENABLED(HAS_BLTOUCH) 
   #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 #else
   #define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe.
 #endif   
-				  
-  
-																							
-																								  
-  
-											
-  
-																										 
-  
-																	 
-									
-																	 
-																	 
-																	 
-																	
-																																																																																												 
-   
-										 
-										 
-										 
-							  
-							  
-					  
-										   
-	  
-							  
-							  
-							  
-							  
-							  
-										 
-				  
-										   
-	  
-							  
-							  
-							  
-							  
-							  
-							  
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
@@ -1331,9 +1235,7 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
-				  
 //#define DISTINCT_E_FACTORS
-	  
 
 /**
  * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
@@ -1345,23 +1247,13 @@
 #else
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 134 }
 #endif
-					   
-															
-	 
-															
-	  
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-		   
-				  
 #define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 30 }
-	   
-																				   
-		
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1374,11 +1266,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-				  
 #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 200, 10000 } //bd
-	 
-																					   
-	  
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1448,7 +1336,6 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-		  
 #define S_CURVE_ACCELERATION //bd
 
 //===========================================================================
@@ -1505,9 +1392,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-												 
 //#define FIX_MOUNTED_PROBE
-	  
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1677,20 +1562,14 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-													
 #if ENABLED(HAS_BLTOUCH) || ENABLED(HAS_PROX_SENSOR)
   #define NOZZLE_TO_PROBE_OFFSET { 40, -50, 3.5 } // BD - custom setup
 #else
   #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0.2 } //strain gauge original offset
 #endif
-	 
-																			 
-	  
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-									 
-													
 #define PROBING_MARGIN 20 //bd
 // X and Y axis travel speed (mm/min) between probes (133*60)//
 #define XY_PROBE_FEEDRATE (12000)
@@ -1702,9 +1581,7 @@
   #define Z_PROBE_FEEDRATE_FAST (100) //1.2*60 Original
 #endif
 // X and Y axis travel speed (mm/min) between probes
-											
 #define XY_PROBE_FEEDRATE (133*60)
-
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #if ENABLED(HAS_BLTOUCH) || ENABLED(HAS_PROX_SENSOR)
   #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 4) 
@@ -1728,17 +1605,12 @@
  * Useful for a strain gauge or piezo sensor that needs to factor out
  * elements such as cables pulling on the carriage.
  */
-
-															  
-											  
 //#define PROBE_TARE
-	  
 #if ENABLED(PROBE_TARE)
   #define PROBE_TARE_TIME  200    // (ms) Time to hold tare pin
   #define PROBE_TARE_DELAY 200    // (ms) Delay after tare before
   #define PROBE_TARE_STATE HIGH   // State to write pin for tare
   //#define PROBE_TARE_PIN PA5    // Override default pin
-														
   #if ENABLED(PROBE_ACTIVATION_SWITCH)
     //#define PROBE_TARE_ONLY_WHILE_INACTIVE  // Fail to tare/probe if PROBE_ACTIVATION_SWITCH is active
   #endif
@@ -1779,19 +1651,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-
-									  
 #define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-						
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
-																			  
-							  
-																		   
-																			  
-	   
-																		   
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-	  
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
@@ -2124,9 +1986,7 @@
  */
 //#define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-							 
   #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-		
   #define LEVELING_BED_TEMP     65
 #endif
 
@@ -2188,8 +2048,6 @@
 
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
-
-										
   // Set the number of grid points per dimension.
   #define GRID_MAX_POINTS_X 4
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
@@ -2207,9 +2065,6 @@
     // Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-
-	
-										   
     //#define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
@@ -2324,7 +2179,6 @@
  * Commands to execute at the end of G29 probing.
  * Useful to retract or move the Z probe out of the way.
  */
-							 
 //#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"
 
 // @section homing
@@ -2351,8 +2205,6 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-
-								   
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
@@ -2360,18 +2212,12 @@
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
 #endif
 
-
-							 
 // Homing speeds (mm/min)
 #if NONE(HAS_BLTOUCH)
   #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (0.8*60) }
 #else
   #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (10*60) }
 #endif
- 
-															
-	  
-
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
 
@@ -2405,13 +2251,6 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-
-
-																								  
-									  
-																							   
-  
-
 //#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
@@ -2421,7 +2260,6 @@
   #define XY_SIDE_AD 200
 
   // Or, set the XY skew factor directly:
-										
   #define XY_SKEW_FACTOR 0.0 //bd
 
   #define SKEW_CORRECTION_FOR_Z //bd
@@ -2440,14 +2278,6 @@
   // Enable this option for M852 to set skew at runtime
   #define SKEW_CORRECTION_GCODE //bd
 #endif
-
-												  
-							  
-									 
-							  
-							  
-																  
-		
 
 //=============================================================================
 //============================= Additional Features ===========================
@@ -2508,12 +2338,6 @@
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
-									
-								  
-								  
-								  
-														 
-
 #define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 220
 #define PREHEAT_2_TEMP_BED    110
@@ -2521,11 +2345,6 @@
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
 // @section motion
-									 
-	 
-								  
-		
-								  
 
 /**
  * Nozzle Park
@@ -2544,7 +2363,6 @@
   // Specify a park position as { X, Y, Z_raise }
   #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
   //#define NOZZLE_PARK_MOVE          0   // Park motion: 0 = XY Move, 1 = X Only, 2 = Y Only, 3 = X before Y, 4 = Y before X
-																		  
   //#define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
@@ -2585,7 +2403,6 @@
  *       Before starting, the nozzle moves to NOZZLE_CLEAN_START_POINT.
  *
  *   Caveats: The ending Z should be the same as starting Z.
-														
  */
 //#define NOZZLE_CLEAN_FEATURE
 
@@ -3240,15 +3057,6 @@
 /**
  * DGUS Touch Display with DWIN OS. (Choose one.)
  *
-															
-																 
-  
-											   
-																 
-														   
-														 
-														   
-  
  * ORIGIN (Marlin DWIN_SET)
  *  - Download https://github.com/coldtobi/Marlin_DGUS_Resources
  *  - Copy the downloaded DWIN_SET folder to the SD card.
@@ -3291,9 +3099,6 @@
 // Touch-screen LCD for Malyan M200/M300 printers
 //
 //#define MALYAN_LCD
-					   
-															
-	  
 
 //
 // Touch UI for FTDI EVE (FT800/FT810) displays
@@ -3307,7 +3112,6 @@
 //#define ANYCUBIC_LCD_I3MEGA
 //#define ANYCUBIC_LCD_CHIRON
 #if EITHER(ANYCUBIC_LCD_I3MEGA, ANYCUBIC_LCD_CHIRON)
-														 
   //#define ANYCUBIC_LCD_DEBUG
   //#define ANYCUBIC_LCD_GCODE_EXT  // Add ".gcode" to menu entries for DGUS clone compatibility
 #endif
@@ -3316,9 +3120,6 @@
 // 320x240 Nextion 2.8" serial TFT Resistive Touch Screen NX3224T028
 //
 //#define NEXTION_TFT
-						
-														
-	  
 
 //
 // Third-party or vendor-customized controller interfaces.
@@ -3463,7 +3264,6 @@
 
 #if ENABLED(TFT_LVGL_UI)
   //#define MKS_WIFI_MODULE  // MKS WiFi module
-										   
 #endif
 
 /**
@@ -3569,9 +3369,6 @@
 // then the BLUE led is on. Otherwise the RED led is on. (1C hysteresis)
 //#define TEMP_STAT_LEDS
 
-										  
-				  
-
 // Support for BlinkM/CyzRgb
 //#define BLINKM
 
@@ -3599,7 +3396,6 @@
  *
  *  NOTE: A separate 5V power supply is required! The NeoPixel LED needs
  *  more current than the Arduino 5V linear regulator can produce.
-				  
  *
  *  Requires PWM frequency between 50 <> 100Hz (Check HAL or variant)
  *  Use FAST_PWM_FAN, if possible, to reduce fan noise.
@@ -3693,11 +3489,3 @@
 
 // Disable servo with M282 to reduce power consumption, noise, and heat when not in use
 //#define SERVO_DETACH_GCODE
-
-										
-																			 
-	  
-
-													
-										   
-	  
