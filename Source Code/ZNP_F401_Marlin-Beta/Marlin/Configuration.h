@@ -90,7 +90,7 @@
 #define IS_DUAL_Z // uncomment if you have dual independent Z, Requires a TMC2208 driver in the empty socket.																								  
 #define NO_NOZZLE_PREHEAT // uncomment if you don't want the nozzle to pre-heat for leveling. RECOMMENDED Enabled
 #define HAS_BLTOUCH               // uncomment if you have a BLTouch or clone
-#deine HAS_BIQUH2	//has a biqu H2 direct drive hot end
+#define HAS_BIQUH2	//has a biqu H2 direct drive hot end
 #if ENABLED(IS_DUAL_Z)
   #define Z2_ENABLE_PIN  E1_ENABLE_PIN
   #define Z2_STEP_PIN    E1_STEP_PIN
